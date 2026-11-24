@@ -1,0 +1,268 @@
+/* ==========================================================================
+   custom.css - Estilos personalizados para el aplicativo de Avistamiento de Aves
+   Complementa Bootstrap 5 con estética ornitológica, accesible y responsive
+   ========================================================================== */
+
+:root {
+  --color-forest-dark: #192e24;
+  --color-forest-medium: #244b38;
+  --color-forest-light: #2d6a4f;
+  --color-forest-accent: #52b788;
+  --color-earth-sand: #f8faf7;
+  --color-amber-gold: #e76f51;
+  --color-card-border: rgba(36, 75, 56, 0.08);
+  --shadow-subtle: 0 4px 14px rgba(0, 0, 0, 0.05);
+  --shadow-hover: 0 14px 28px rgba(25, 46, 36, 0.12);
+  --transition-smooth: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+body {
+  background-color: var(--color-earth-sand);
+  color: #2b2d42;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ==========================================================================
+   Navegación Sticky
+   ========================================================================== */
+.navbar-custom {
+  background-color: var(--color-forest-dark);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.brand-icon-box {
+  width: 36px;
+  height: 36px;
+  background: rgba(82, 183, 136, 0.2);
+  border: 1px solid rgba(82, 183, 136, 0.4);
+  color: #74c69d;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  transition: var(--transition-smooth);
+}
+
+.navbar-brand:hover .brand-icon-box {
+  background: rgba(82, 183, 136, 0.35);
+  transform: rotate(-8deg) scale(1.05);
+}
+
+.nav-link-tinosa {
+  color: #d8f3dc !important;
+  background-color: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  transition: var(--transition-smooth);
+}
+
+.nav-link-tinosa:hover,
+.nav-link-tinosa:focus-visible {
+  color: #ffffff !important;
+  background-color: rgba(255, 255, 255, 0.16);
+  border-color: rgba(255, 255, 255, 0.25);
+  transform: translateY(-1px);
+}
+
+.btn-registrar-header {
+  background-color: var(--color-forest-accent);
+  color: #0b2518;
+  border: none;
+  font-weight: 600;
+  transition: var(--transition-smooth);
+  box-shadow: 0 4px 10px rgba(82, 183, 136, 0.3);
+}
+
+.btn-registrar-header:hover,
+.btn-registrar-header:focus-visible {
+  background-color: #74c69d;
+  color: #05190f;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 14px rgba(82, 183, 136, 0.45);
+}
+
+/* ==========================================================================
+   Hero / Header
+   ========================================================================== */
+.hero-section {
+  background: linear-gradient(180deg, rgba(36, 75, 56, 0.08) 0%, rgba(248, 250, 247, 1) 100%);
+  border-bottom: 1px solid var(--color-card-border);
+}
+
+.hero-title {
+  color: var(--color-forest-dark);
+  letter-spacing: -0.02em;
+}
+
+.stat-pill {
+  background: #ffffff;
+  border: 1px solid rgba(45, 106, 79, 0.18);
+  box-shadow: var(--shadow-subtle);
+}
+
+.search-container {
+  max-width: 360px;
+  width: 100%;
+}
+
+.search-input {
+  border-radius: 50rem !important;
+  border: 1px solid rgba(45, 106, 79, 0.2);
+  box-shadow: var(--shadow-subtle);
+  font-size: 0.925rem;
+  padding-left: 2.25rem;
+  background-color: #ffffff;
+}
+
+.search-input:focus {
+  border-color: var(--color-forest-medium);
+  box-shadow: 0 0 0 0.25rem rgba(45, 106, 79, 0.15);
+}
+
+/* ==========================================================================
+   Tarjetas de Avistamiento (Grid & Responsive)
+   ========================================================================== */
+.bird-card {
+  border: 1px solid var(--color-card-border);
+  border-radius: 1rem;
+  background-color: #ffffff;
+  box-shadow: var(--shadow-subtle);
+  transition: var(--transition-smooth);
+  overflow: hidden;
+}
+
+.bird-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-hover);
+  border-color: rgba(45, 106, 79, 0.3);
+}
+
+/* Regla obligatoria para imágenes consistentes */
+.card-img-top {
+  height: 220px;
+  object-fit: cover;
+  object-position: center;
+  transition: transform 0.4s ease;
+}
+
+.bird-card:hover .card-img-top {
+  transform: scale(1.03);
+}
+
+.card-img-wrapper {
+  background-color: #e9ecef;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Badges decorativos para la especie y fecha */
+.badge-especie {
+  background: rgba(25, 46, 36, 0.85);
+  color: #e8f5e9;
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  font-weight: 600;
+  font-size: 0.785rem;
+  letter-spacing: 0.02em;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  max-width: 85%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.badge-fecha {
+  background-color: #e8f5e9;
+  color: #1b4332;
+  font-weight: 600;
+  font-size: 0.75rem;
+  padding: 0.35rem 0.65rem;
+  border-radius: 50rem;
+  border: 1px solid rgba(45, 106, 79, 0.15);
+}
+
+.card-descripcion {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  line-height: 1.5;
+}
+
+.btn-eliminar {
+  transition: var(--transition-smooth);
+}
+
+.btn-eliminar:hover,
+.btn-eliminar:focus-visible {
+  transform: scale(1.05);
+}
+
+/* ==========================================================================
+   Estado Vacío (Empty State)
+   ========================================================================== */
+.empty-state-card {
+  background: #ffffff;
+  border: 2px dashed rgba(45, 106, 79, 0.25);
+  border-radius: 1.25rem;
+  padding: 3.5rem 1.5rem;
+  box-shadow: var(--shadow-subtle);
+}
+
+.empty-state-icon {
+  width: 80px;
+  height: 80px;
+  background-color: #e8f5e9;
+  color: var(--color-forest-medium);
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.25rem;
+}
+
+/* ==========================================================================
+   Modal y Formulario
+   ========================================================================== */
+.modal-header-custom {
+  background-color: var(--color-forest-dark);
+  color: #ffffff;
+}
+
+.form-label {
+  color: #1f2937;
+  margin-bottom: 0.35rem;
+}
+
+.form-control:focus,
+.form-select:focus {
+  border-color: var(--color-forest-light);
+  box-shadow: 0 0 0 0.25rem rgba(45, 106, 79, 0.2);
+}
+
+/* Validación accesible moderna con :user-invalid */
+.form-control:user-invalid,
+.form-select:user-invalid {
+  border-color: #dc3545;
+  box-shadow: 0 0 0 0.2rem rgba(220, 53, 69, 0.15);
+}
+
+/* Accesibilidad de foco */
+:focus-visible {
+  outline: 3px solid var(--color-forest-medium);
+  outline-offset: 2px;
+}
+
+/* ==========================================================================
+   Footer
+   ========================================================================== */
+.footer-custom {
+  margin-top: auto;
+  background-color: var(--color-forest-dark);
+  color: #d8f3dc;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}

@@ -1,0 +1,26 @@
+# .gitignore - Archivos y carpetas ignorados por Git para la aplicación de avistamiento de aves
+
+# Dependencias
+node_modules/
+package-lock.json
+
+# Base de datos local SQLite
+db/avistamientos.db
+*.db
+bird_sightings.db
+
+# Contenido de uploads (manteniendo uploads/.gitkeep)
+uploads/*
+!uploads/.gitkeep
+
+# Variables de entorno y logs
+.env
+*.log
+
+# Archivos del sistema operativo y editores
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.swp
+*.swo
